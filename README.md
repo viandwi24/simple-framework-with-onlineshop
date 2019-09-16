@@ -1,6 +1,7 @@
 # simple-framework-with-onlineshop
 Framework Simpel berbasis Objek Orientasi dengan contoh Program Onlineshop Sederhana
 
+![screenshot preview](https://raw.githubusercontent.com/viandwi24/simple-framework-with-onlineshop/master/ss.png)
 
 ## Cara Memasang
 * clone repo ini 'git clone http://github.com/viandwi24/simple-framework-with-onlineshop' atau bisa menekan tomboh Download
