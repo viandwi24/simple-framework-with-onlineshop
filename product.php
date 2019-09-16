@@ -22,7 +22,7 @@ $product = $product->table('product')
             <div class="col-8">
                 <div class="card">
                     <div style="width: auto; height: 200px; overflow:hidden;">
-                        <img src="<?php echo $product->image; ?>" style="height: 100%; min-width: 100%; left: 50%; position: relative; transform: translateX(-50%);" />
+                        <img src="<?php echo url('assets/images/'.$product->image); ?>" style="height: 100%; min-width: 100%; left: 50%; position: relative; transform: translateX(-50%);" />
                     </div>
                     <div class="card-header">
                         <h3 class="card-title mb-0"><?php echo $product->title; ?></h3>

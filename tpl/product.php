@@ -12,7 +12,7 @@ $db = $db->table('product')->get();
                     <?php echo ($item->stock == 0) ? 'Stock Habis' : 'Dijual';?>
                 </div>
             </div>
-            <img src="<?php echo $item->image; ?>" alt="">
+            <img src="<?php echo url('assets/images/'.$item->image); ?>" alt="">
             <div class="card-body position-relative d-flex flex-column">
                 <?php if($item->stock > 0) {?>
                 <a href="<?php echo url('cart.php?a=add&id=' . $item->id . '&stock=1'); ?>" class="add-to-cart bg-primary text-white" data-toggle="tooltip" data-placement="left" title="Add To Cart">

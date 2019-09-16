@@ -9,11 +9,21 @@
  * PostgreSQL           = pgsql
  */
 
- /** GENERAL INFO */
+ /** example Postgresql */
+// $db = [
+//     'driver'    => 'pgsql',
+//     'host'      => 'localhost',
+//     'port'      => '5432',
+//     'dbname'    => 'onlenshop',
+//     'username'  => 'viandwi24',
+//     'password'  => '63945'
+// ];
+
+ /** example Mysql */
 $db = [
-    'driver'    => 'pgsql',
+    'driver'    => 'mysql',
     'host'      => 'localhost',
-    'port'      => '5432',
+    'port'      => '3306',
     'dbname'    => 'onlenshop',
     'username'  => 'viandwi24',
     'password'  => '63945'
@@ -31,6 +41,13 @@ $db = [
 
 
 /** query pdo to connect */
+// $query = $db['driver'] 
+// . ":host=" . $db['host']
+// . ";port=" . $db['port']
+// . ";dbname=" . $db['dbname']
+// . ";user=" . $db['username']
+// . ";password=" . $db['password']
+// . "";
 $query = $db['driver'] 
     . ":host=" . $db['host']
     . ";port=" . $db['port']

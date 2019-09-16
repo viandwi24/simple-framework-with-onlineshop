@@ -20,6 +20,21 @@ CREATE TABLE admins(
    password VARCHAR (255) NOT NULL
 );
 
+CREATE TABLE transaksi(
+   id serial PRIMARY KEY,
+   users_id INTEGER,
+   alamat VARCHAR (255) NOT NULL,
+   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE transaksi_product(
+   id serial PRIMARY KEY,
+   transaksi_id INTEGER,
+   product_id INTEGER,
+   cost_purchase INTEGER,
+   stock_purchase INTEGER
+);
+
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to viandwi24;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public to viandwi24;
 GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public to viandwi24;

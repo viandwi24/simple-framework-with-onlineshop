@@ -25,7 +25,7 @@ class Database
         /** make connection */
         if($this->pdo == null)
         {
-            $this->pdo = new PDO($this->query_connection);
+            $this->pdo = new PDO($this->query_connection, $this->config['username'], $this->config['password']);
             $this->pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         }
     }

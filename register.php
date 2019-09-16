@@ -1,5 +1,28 @@
 <?php require_once __DIR__ . '/mod/__load.php'; //load system ?>
 <?php if(auth()->check()){ redirect(base_url()); } //no require auth ?>
+<?php
+if (isset($_POST['register'])) {
+    $req_param = ['name', 'username', 'password', 're_password'];
+    foreach($req_param as $item)
+    {
+      if (!isset($_POST[$item]) || str_replace(' ', '', $_POST[$item]) == '' || $_POST[$item] == null) dd($item . " parameter is missing.");
+    }
+
+    if ($_POST['password'] != $_POST['re_password']) dd("<script>alert('password dan repassword tidak sama');
+        window.location.href='".url('cart.php')."';
+        </script>");
+    
+    $db = new Database;
+    $db->table('users')->insert([
+        'name' => $_POST['name'],
+        'username' => $_POST['username'],
+        'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+    ]);
+    
+    auth()->guard('user')->login($_POST['username']);
+    redirect(url("login.php"));
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,7 +68,7 @@
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-success">
+                                    <button name="register" type="submit" class="btn btn-success">
                                         Register
                                     </button>
                                 </div>
